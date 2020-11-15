@@ -1,7 +1,7 @@
 # typo3-arm-docker
 
-A docker image containing Apache, PHP7, MySQL, and Typo3 CMS, compatible with ARM processors (eg. Raspberry Pi)
-
+A docker image containing Apache, PHP7, MySQL, and Composer, compatible with ARM processors (eg. Raspberry Pi), aimed at 
+installing Typo3 CMS.
 
 Kubernetes pod
 ````yaml
@@ -37,5 +37,9 @@ spec:
             claimName: typo3-pvc
 ````
 
-Then run "composer create-project typo3/cms-base-distribution" on the pod to start having fun.
+Then run
+````shell script
+cd /sites && composer create-project typo3/cms-base-distribution mysuperproject
+````
+on the pod to start having fun.
      
