@@ -64,10 +64,3 @@ spec:
             name: spidybox-apache-config
 ---
 ````
-
-Then run
-````shell script
-cd /var/www/html && composer -n create-project typo3/cms-base-distribution mysuperproject
-````
-on the pod to start having fun.
-     
