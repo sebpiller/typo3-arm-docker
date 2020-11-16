@@ -7,7 +7,7 @@ MAINTAINER Sébastien Piller <me@sebpiller.ch>
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends curl wget apache2 php mariadb-server git-all && \
+    apt-get install -y --no-install-recommends zip unzip curl apache2 php7.3 php7.3-zip php7.3-xml mariadb-server && \
     wget -O composer-setup.php https://getcomposer.org/installer && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
