@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends --no-install-suggests \
-        ca-certificates apt-utils vim zip unzip curl wget apache2 \
+        ca-certificates apt-utils vim zip unzip curl wget apache2 imagemagick \
         php7.3 php7.3-mbstring php7.3-mysql php7.3-zip php7.3-xml php7.3-gd php7.3-intl mariadb-server && \
     wget --no-check-certificate -O composer-setup.php https://getcomposer.org/installer && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
