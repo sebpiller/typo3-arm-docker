@@ -14,6 +14,15 @@ RUN apt-get update -y && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     rm -rf /var/lib/apt/lists/*
 
+# Apache modules for Typo3
+RUN a2enmod alias authz_core autoindex deflate expires filter headers rewrite setenvif
+
+# Disable default site by default
+RUN a2dissite 000-default
+
+COPY ./default-start.sh /default-start.sh
+RUN chmod +x /default-start.sh
+
 # forward request and error logs to docker log collector
 #RUN ln -sf /dev/stdout /var/log/apache2/access.log && \
 #	ln -sf /dev/stdout /var/log/apache2/other_vhosts_access.log && \
@@ -23,4 +32,4 @@ RUN apt-get update -y && \
 
 EXPOSE 80 3306
 
-CMD [ "/bin/sh", "-c", "service mysql start && service apache2 start && sleep infinity" ]
+CMD [ "/bin/sh", "-c", "/default-start.sh && sleep infinity" ]
