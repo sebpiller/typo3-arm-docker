@@ -1,7 +1,5 @@
 # typo3-arm-docker
 
-WARNING: some issues are in the verge to be resolved (sooner or later...). 
-
 A docker image containing Apache, PHP7, MySQL, and Composer, compatible with ARM processors (eg. Raspberry Pi), aimed at 
 installing Typo3 CMS.
 
@@ -82,9 +80,6 @@ data:
             # symlinked into the document root directory. The following
             # directive enables that apache follows the symlinks.
             Options +FollowSymLinks
-
-            # disable .htaccess, because it slows down apache
-            AllowOverride None
 
             Order allow,deny
             Allow from all
