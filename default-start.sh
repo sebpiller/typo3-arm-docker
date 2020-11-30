@@ -1,3 +1,4 @@
+#! /bin/bash
 service mysql start
 
 a2enconf 001-typo-cms
