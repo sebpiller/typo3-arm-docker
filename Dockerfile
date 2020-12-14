@@ -6,6 +6,13 @@ MAINTAINER Sébastien Piller <me@sebpiller.ch>
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+RUN \
+    { \
+       printf "deb http://nexus.home/repository/debian_buster/ buster main" \
+       printf "deb http://nexus.home/repository/debian-security_buster-updates/ buster/updates main" \
+       printf "deb http://nexus.home/repository/debian_buster-updates/ buster-updates main" \
+    } > /etc/apt/sources.list
+
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends --no-install-suggests \
         ca-certificates vim zip unzip curl wget git apache2 imagemagick \
