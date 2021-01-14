@@ -259,7 +259,7 @@ spec:
   selector:
     name: typo3
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   namespace: spidybox-web-ns

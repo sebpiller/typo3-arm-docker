@@ -12,7 +12,7 @@ RUN \
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends --no-install-suggests \
         ca-certificates vim zip unzip curl wget git apache2 imagemagick \
-        php7.3 php7.3-mbstring php7.3-mysql php7.3-curl php7.3-zip php7.3-xml php7.3-gd php7.3-intl mariadb-server && \
+        php7.4 php7.4-mbstring php7.4-mysql php7.4-curl php7.4-zip php7.4-xml php7.4-gd php7.4-intl mariadb-server && \
     a2enmod alias authz_core autoindex deflate expires filter headers rewrite setenvif && \
     wget --no-check-certificate -O composer-setup.php https://getcomposer.org/installer && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
